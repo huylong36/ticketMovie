@@ -21,6 +21,7 @@ import { FCButton } from "../../component/FCButton";
 import { Routes } from "../../navigation/routes";
 import { actionLoginSuccess } from "../../screen/login/loginSlice";
 import "./style.scss";
+import { SlideMovieHot } from "../../screen/slidehot";
 const LayoutClient = () => {
   const authReducer = useSelector((state) => state.user);
   const [anchorElNav, setAnchorElNav] = useState(null);
@@ -35,12 +36,6 @@ const LayoutClient = () => {
       : null;
     dispatch(actionLoginSuccess(userInfo));
   }, []);
-
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-
-  // eslint-disable-next-line react-hooks/rules-of-hooks
 
   const pages = [
     {
@@ -283,6 +278,10 @@ const LayoutClient = () => {
     );
   };
 
-  return <>{renderHeader()}</>;
+  return <>
+  
+  {renderHeader()}
+  <SlideMovieHot/>
+  </>;
 };
 export default LayoutClient;

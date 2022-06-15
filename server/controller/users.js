@@ -33,6 +33,7 @@ export const register = async (req, res) => {
       password,
     });
 
+    await newUser.save();
     const accessToken = createAccessToken({ id: newUser._id });
     res
       .status(200)
