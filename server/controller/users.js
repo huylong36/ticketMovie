@@ -40,6 +40,33 @@ export const register = async (req, res) => {
   } catch (error) {}
 };
 
+export const login = async (req, res) => {
+  const { userName, password } = req.body;
+  if (!userName || !password) {
+    return res
+      .status(400)
+      .json({ success: false, message: "Missing username or password" });
+  }
+
+  try {
+    const user = await UserModel.findOne({ userName });
+    if (!user) {
+      return res.status(400).json({
+        success: false,
+        message: "Tên đăng nhập hoặc mật khẩu không chính xác !",
+      });
+    }
+    const accessToken = createAccessToken({ id: user._id });
+    return res.json({
+      success: true,
+      message: "User logged in successfully",
+      accessToken,
+      user,
+    });
+  } catch (error) {
+    console.log("error login", error);
+  }
+};
 const createAccessToken = (payload) => {
   return jwt.sign(payload, `${process.env.ACCESS_TOKEN_SECRET}`, {
     expiresIn: "7d",

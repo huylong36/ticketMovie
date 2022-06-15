@@ -1,0 +1,46 @@
+.left-form-login {
+  background-image: url("../../assets/images/x.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+.right-form-login {
+  .container-login {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    .form-item-login,
+    .form-item-register {
+      width: 100%;
+      padding: 30px;
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+      .item-text-field {
+        margin: 0.8rem 0;
+        .input-login {
+          margin-top: 7px;
+        }
+        span {
+          color: rgb(46, 48, 48);
+        }
+        .text_error {
+          color: red;
+        }
+      }
+      .btn-login,
+      .btn-register {
+        text-align: center;
+      }
+      .forgot-password {
+        color: rgb(167, 165, 165);
+        text-align: center;
+        margin-top: 15px;
+        div {
+          margin-top: 10px;
+          a {
+            color: black;
+          }
+        }
+      }
+    }
+  }
+}
