@@ -1,0 +1,16 @@
+.swiper-wraper {
+  position: relative;
+  .item-hover-trailer {
+    position: absolute;
+    top: 45%;
+    left: 47%;
+    svg {
+      width: 90px;
+      height: 90px;
+      cursor: pointer;
+      &:hover {
+        filter: invert(1);
+      }
+    }
+  }
+}
